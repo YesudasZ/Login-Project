@@ -109,6 +109,7 @@ const loadHome = async(req,res)=>{
   try {
 
     const userData = await User.findById({_id:req.session.user_id});
+    console.log("user details",userData);
     res.render('home',{user:userData});
   } catch (error) {
     console.log(error.message);

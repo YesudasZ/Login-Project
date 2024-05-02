@@ -42,6 +42,7 @@ const verifyLogin = async(req,res)=>{
        }
        else{
         req.session.user_id = userData._id;
+        console.log("admin data",userData);
         res.redirect("/admin/home");
        }
 
