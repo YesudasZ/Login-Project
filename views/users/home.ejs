@@ -1,0 +1,34 @@
+
+
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+
+
+<% include('../layouts/header.ejs') %>
+
+<div class="container mt-5">
+  <h2>Welcome, <%= user.name %></h2>
+
+  <div class="row">
+    <div class="col-md-4">
+      <img src="userImages/<%= user.image %>" class="img-fluid rounded-circle" alt="<%= user.image %>">
+    </div>
+    <div class="col-md-8">
+      <table class="table table-bordered">
+        <tbody>
+          <tr>
+            <td>Email</td>
+            <td><%= user.email %></td>
+          </tr>
+          <tr>
+            <td>Mobile</td>
+            <td><%= user.mobile %></td>
+          </tr>
+        </tbody>
+      </table>
+      <a href="/edit?id=<%= user._id %>" class="btn btn-primary">Edit</a>
+      <a href="/logout" class="btn btn-danger">Logout</a>
+    </div>
+  </div>
+</div>
+
+<% include('../layouts/footer.ejs') %>

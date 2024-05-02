@@ -1,0 +1,24 @@
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+
+<% include('../layouts/header.ejs') %>
+
+<div class="container mt-5">
+  <h1>Edit User</h1>
+
+  <form action="" method="post">
+    <div class="form-group">
+      <input type="name" class="form-control" name="name" required placeholder="Enter Name" value="<%= user.name %>">
+    </div>
+    <div class="form-group">
+      <input type="email" class="form-control" name="email" required placeholder="Enter Email" value="<%= user.email %>">
+    </div>
+    <div class="form-group">
+      <input type="text" class="form-control" name="mno" required placeholder="Enter Mobile" value="<%= user.mobile %>">
+    </div>
+    <input type="hidden" name="id" value="<%= user._id %>">
+    <button type="submit" class="btn btn-primary">Update User</button>
+  </form>
+  <a href="/admin/" class="btn btn-secondary">Go to Dashboard</a>
+</div>
+
+<% include('../layouts/footer.ejs') %>
